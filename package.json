@@ -1,11 +1,24 @@
 {
   "name": "coursera_angular4",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is Angular4 learning project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edbutcher/coursera_angular4.git"
   },
   "author": "Alexandr Poliakov",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edbutcher/coursera_angular4/issues"
+  },
+  "homepage": "https://github.com/edbutcher/coursera_angular4#readme",
+  "dependencies": {
+    "lite-server": "^2.3.0"
+  }
 }
