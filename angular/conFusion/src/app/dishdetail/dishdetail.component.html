@@ -35,17 +35,11 @@
       </md-card-header>
       <md-card-content>
         <md-list *ngIf="dish">
-
             <md-list-item *ngFor="let comment of dish.comments">
-
                   <p md-line>{{ comment.comment }}</p>
-
                   <p md-line>{{ comment.rating }} Stars</p>
-
                   <p md-line>--{{ comment.author }} {{ comment.date | date }}</p>
-
             </md-list-item>
-
         </md-list>
       </md-card-content>
     </md-card>
