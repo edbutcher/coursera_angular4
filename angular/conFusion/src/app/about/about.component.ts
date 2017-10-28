@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { LeaderService } from '../services/leader.service';
 import { Leader } from '../shared/leader';
+import { LeaderService } from '../services/leader.service';
 
 @Component({
   selector: 'app-about',
