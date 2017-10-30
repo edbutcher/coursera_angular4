@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms'; 
 
 import 'hammerjs';
 
@@ -21,7 +22,7 @@ import { LeaderService } from './services/leader.service';
 
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
-
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -33,19 +34,24 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     FooterComponent,
     AboutComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     DishService,
     PromotionService,
     LeaderService
+  ],
+  entryComponents: [
+        LoginComponent
   ],
   bootstrap: [AppComponent]
 })
