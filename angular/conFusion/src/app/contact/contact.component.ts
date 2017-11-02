@@ -66,7 +66,7 @@ export class ContactComponent implements OnInit {
       this.onValueChanged();
     }
 
-    onValueChanged(data?: any) {
+  onValueChanged(data?: any) {
     if (!this.feedbackForm) { return; }
     const form = this.feedbackForm;
     for (const field in this.formErrors) {
@@ -82,18 +82,18 @@ export class ContactComponent implements OnInit {
     }
   }
 
-    onSubmit() {
-      this.feedback = this.feedbackForm.value;
-      console.log(this.feedback);
-      this.feedbackForm.reset({
-        firstname: '',
-        lastname: '',
-        telnum: '',
-        email: '',
-        agree: false,
-        contacttype: 'None',
-        message: ''
-      });
-    }
+  onSubmit() {
+    this.feedback = this.feedbackForm.value;
+    console.log(this.feedback);
+    this.feedbackForm.reset({
+      firstname: '',
+      lastname: '',
+      telnum: '',
+      email: '',
+      agree: false,
+      contacttype: 'None',
+      message: ''
+    });
+  }
 
 }

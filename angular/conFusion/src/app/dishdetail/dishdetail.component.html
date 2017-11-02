@@ -32,9 +32,6 @@
       </md-card-actions>
     </md-card>
   </div>
-  <div [hidden]="dish">
-    <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
-  </div>
 
   <div fxFlex="40" *ngIf="dish">
     <md-card>
@@ -51,6 +48,37 @@
                   <p md-line>--{{ comment.author }} {{ comment.date | date }}</p>
             </md-list-item>
         </md-list>
+
+        <p>{{ commentForm.value | json }} {{ commentForm.status | json }}</p>
+
+        <form novalidate [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+          <p>
+            <md-input-container class="half-width" dividerColor="{{(formErrors.author) ? 'warn' : 'primary'}}">
+              <input mdInput formControlName="author" placeholder="Name" type="text" required>
+              <md-hint>
+                <span [hidden]="!(formErrors.author)">
+                  {{formErrors.author}}</span>
+              </md-hint>
+            </md-input-container>
+          </p>
+            <div>
+              <md-slider flex thumb-label="true" tick-interval="true" ng-model="commentForm" formControlName="rating" step="1" min="1" max="5" value="5" aria-label="rating">
+              </md-slider>
+            </div>
+            <div>
+            <md-input-container class="full-width" dividerColor="{{(formErrors.message) ? 'warn' : 'primary'}}">
+              <textarea mdInput formControlName="message" placeholder="Your Feedback" rows=12 required></textarea>
+              <md-hint>
+                <span [hidden]="!(formErrors.message)">
+                  {{formErrors.message}}</span>
+              </md-hint>
+            </md-input-container>
+          </div>
+
+          <button type="submit" md-button class="background-primary text-floral-white" [disabled]="commentForm.invalid">Submit</button>
+        </form>
+
+
       </md-card-content>
     </md-card>
   </div>
