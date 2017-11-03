@@ -45,15 +45,20 @@
             <md-list-item *ngFor="let comment of dish.comments">
                   <p md-line>{{ comment.comment }}</p>
                   <p md-line>{{ comment.rating }} Stars</p>
-                  <p md-line>--{{ comment.author }} {{ comment.date | date }}</p>
+                  <p md-line>-- {{ comment.author }} {{ comment.date | date }}</p>
             </md-list-item>
         </md-list>
 
-        <p>{{ commentForm.value | json }} {{ commentForm.status | json }}</p>
+            <md-list-item [hidden]="commentForm.status == 'INVALID'">
+                  <p md-line>{{ commentForm.value.comment }}</p>
+                  <p md-line>{{ commentForm.value.rating }} Stars</p>
+                  <p md-line>-- {{ commentForm.value.author }}</p>
+            </md-list-item>
+
 
         <form novalidate [formGroup]="commentForm" (ngSubmit)="onSubmit()">
           <p>
-            <md-input-container class="half-width" dividerColor="{{(formErrors.author) ? 'warn' : 'primary'}}">
+            <md-input-container class="full-width" dividerColor="{{(formErrors.author) ? 'warn' : 'primary'}}">
               <input mdInput formControlName="author" placeholder="Name" type="text" required>
               <md-hint>
                 <span [hidden]="!(formErrors.author)">
@@ -62,15 +67,15 @@
             </md-input-container>
           </p>
             <div>
-              <md-slider flex thumb-label="true" tick-interval="true" ng-model="commentForm" formControlName="rating" step="1" min="1" max="5" value="5" aria-label="rating">
+              <md-slider flex thumb-label="true" tick-interval="1" ng-model="commentForm" formControlName="rating" step="1" min="1" max="5" value="5" aria-label="rating">
               </md-slider>
             </div>
             <div>
-            <md-input-container class="full-width" dividerColor="{{(formErrors.message) ? 'warn' : 'primary'}}">
-              <textarea mdInput formControlName="message" placeholder="Your Feedback" rows=12 required></textarea>
+            <md-input-container class="full-width" dividerColor="{{(formErrors.comment) ? 'warn' : 'primary'}}">
+              <textarea mdInput formControlName="comment" placeholder="Your Feedback" rows=12 required></textarea>
               <md-hint>
-                <span [hidden]="!(formErrors.message)">
-                  {{formErrors.message}}</span>
+                <span [hidden]="!(formErrors.comment)">
+                  {{formErrors.comment}}</span>
               </md-hint>
             </md-input-container>
           </div>
