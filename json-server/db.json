@@ -39,6 +39,12 @@
           "comment": "It's your birthday, we're gonna party!",
           "author": "25 Cent",
           "date": "2011-12-02T17:57:28.556094Z"
+        },
+        {
+          "author": "Alex",
+          "rating": 4,
+          "comment": "Nice dish!",
+          "date": "2017-11-08T10:51:36.240Z"
         }
       ]
     },

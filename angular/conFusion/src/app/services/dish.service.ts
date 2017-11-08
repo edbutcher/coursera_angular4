@@ -13,11 +13,12 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map'
 
+
 @Injectable()
 export class DishService {
 
   constructor(private restangular: Restangular,
-            private processHTTPMsg: ProcessHTTPMsg) { }
+            private processHTTPMsg: ProcessHTTPMsgService) { }
 
 getDishes(): Observable<Dish[]> {
   return this.restangular.all('dishes').getList();
