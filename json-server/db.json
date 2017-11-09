@@ -240,6 +240,16 @@
       "contacttype": "Email",
       "message": "Nice place",
       "id": 1
+    },
+    {
+      "firstname": "Ed",
+      "lastname": "Butcher",
+      "telnum": "12345678",
+      "email": "ed@butcher.com",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "Nice dish!",
+      "id": 2
     }
   ]
 }
